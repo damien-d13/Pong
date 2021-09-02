@@ -17,12 +17,15 @@
    <center>
       <Pane fx:id="board" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="score" layoutX="574.0" layoutY="16.0" prefWidth="50.0" text="Label" />
+            <Label fx:id="score" layoutX="574.0" layoutY="16.0" prefWidth="50.0">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
             <Rectangle fx:id="player" arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="100.0" stroke="BLACK" strokeType="INSIDE" width="25.0" x="2.0" y="325.0" />
             <Rectangle fx:id="computer" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="25.0" x="1073.0" y="325.0" />
             <Line endX="550.0" startX="550.0" startY="750.0" stroke="WHITE" />
             <Circle fx:id="ball" centerX="550.0" centerY="375.0" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="lbScore" layoutX="438.0" layoutY="9.0" text="Score" textFill="WHITE">
+            <Label layoutX="438.0" layoutY="9.0" text="Score" textFill="WHITE">
                <font>
                   <Font name="Arial" size="26.0" />
                </font>

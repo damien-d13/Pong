@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 
 import fr.damien.utils.PongUtils;
 import javafx.animation.AnimationTimer;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,9 +40,6 @@ public class FXMLController implements Initializable {
     private Button reset;
 
     @FXML
-    private Label lbScore;
-
-    @FXML
     private Label score;
 
     private double playerVelocY = 0;
@@ -64,7 +62,7 @@ public class FXMLController implements Initializable {
     void onResetAction(ActionEvent event) {
         timer.stop();
 
-        ball.setCenterY(450);
+        ball.setCenterX(550);
         ball.setCenterY(375);
         player.setY(325);
         computer.setY(ball.getCenterY() - 50);
@@ -89,15 +87,15 @@ public class FXMLController implements Initializable {
                 case UP:
                 // System.out.println("pressed up");
                     if (player.getY() >= 0)  {
-                        playerVelocY = -10;
+                        playerVelocY = -5;
                         player.setY(player.getY() + playerVelocY);
                         
                     }
                     break;
                  case DOWN:
                     //  System.out.println("pressed down");
-                    if (player.getY() <= 600)  {
-                        playerVelocY = 10;
+                    if (player.getY() <= 650)  {
+                        playerVelocY = 5;
                         player.setY(player.getY() + playerVelocY);
                         
                     }
@@ -123,6 +121,6 @@ public class FXMLController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        score.textProperty().bind(Bindings.convert(PongUtils.scoreProperty()));
     }    
 }
